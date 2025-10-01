@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <div className="w-screen min-h-screen bg-[#f6aa1cff]">
-        <Parallax pages={10} style={{ top: "0", left: "0" }}>
+        <Parallax pages={20} style={{ top: "0", left: "0" }}>
 
           <ParallaxLayer
             offset={0}
@@ -102,8 +102,8 @@ export default function Page() {
               className={creepster.className}
               style={{
                 fontSize: "60px",
-                color: "#f6aa1cff",
-                WebkitTextStroke: "5px #f6aa1cff",
+                color: "white",
+                WebkitTextStroke: "5px white",
                 WebkitTextFillColor: "transparent",
                 mixBlendMode: "difference",
               }}

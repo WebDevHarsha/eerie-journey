@@ -1,0 +1,151 @@
+{
+  "main": {
+    "name": "Sri Harsha V A",
+    "occupation": "Passionate Software Developer",
+    "description": "",
+    "image": "profilepic.jpg",
+    "bio": "My name is Harsha. I am 19 and I'm a fullstack web developer.I love coding in Javascript, Typescript and Python, and have worked with frameworks like ReactJS, NextJS, Express, and NodeJs.I am a sophomore at VIT Chennai.I am a Core member in KLA(Kannada Literary Association) of VIT.  I am also the content writer and RnD member at the BIC(Business Innovation Community) club of VIT.",
+    "contactmessage": "Get in touch with me to know more about my work!",
+    "email": "vasriharsha@gmail.com",
+    "phone": "+91 6360282345",
+    "address": {
+      "street": "VIT Chennai",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "zip": "600127"
+    },
+    "website": "",
+    "resumedownload": "",
+    "social": [
+      {
+        "name": "youtube",
+        "url": "https://www.youtube.com/@VASRIHARSHA",
+        "className": "fa fa-youtube"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/sri-harsha-v-a-a64643273/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/WebDevHarsha",
+        "className": "fa fa-github"
+      },
+      {
+        "name": "twitter",
+        "url": "https://x.com/WeberHarsha",
+        "className": "fa fa-twitter"
+      }
+    ],
+    "profiles": [
+      {
+        "name": "vscode-publisher",
+        "url": "https://marketplace.visualstudio.com/publishers/DevHarsha",
+        "className": "fa fa-box"
+      },
+      {
+        "name": "npm-profile",
+        "url": "https://www.npmjs.com/~dev_harsha",
+        "className": "fa fa-npm"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My Programming Language Proficiency",
+    "education": [
+      {
+        "school": "Vellore Institute of Technology",
+        "degree": "Bachelor's Degree, Electronics and Computer Engineering",
+        "graduated": "Aug 2027",
+        "description": "Yet to graduate"
+      }
+    ],
+    "work": [
+      {
+        "company": "KLA (Kannada Literary Association)",
+        "title": "Core Member",
+        "years": "Jan 2024 - Jan 2025"
+      },
+      {
+        "company": "BIC (Business Innovation Community)",
+        "title": "Content Writer and RnD Member",
+        "years": "Oct 2023 - Present"
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "80%"
+      },
+      {
+        "name": "Python",
+        "level": "90%"
+      },
+      {
+        "name": "React Native",
+        "level": "70%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "70%"
+      },
+      {
+        "name": "Web Development",
+        "level": "95%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Doodle your Day ",
+        "about": "A digital journaling platform where users can capture daily moments, thoughts, and experiences. Features intuitive design and seamless note-taking capabilities.",
+        "image": "/byte.png",
+        "url": "https://doodle-your-day.vercel.app/"
+      },
+      {
+        "title": "Sage",
+        "about": "An adaptive learning platform that personalizes educational content based on individual learning styles. Empowers users to master any subject through customized pathways.",
+        "image": "/dialogic.png",
+        "url": "https://sage-tawny.vercel.app/"
+      },
+      {
+        "title": "Akshaya",
+        "about": "A food waste reduction platform connecting surplus food from restaurants and events with those in need. Combats hunger while promoting sustainability.",
+        "image": "/akshaya.png",
+        "url": "https://akshaya-livid.vercel.app/"
+      },
+      {
+        "title": "Arq-plus",
+        "about": "An augmented reality application that bridges digital and physical worlds. Provides immersive AR experiences with interactive 3D elements.",
+        "image": "/arq-plus.png",
+        "url": "https://arq-plus.vercel.app/"
+      },
+      {
+        "title": "Void Theme",
+        "about": "A minimalist VS Code theme featuring pure black background and carefully crafted syntax highlighting. Designed for developers who embrace darkness while coding.",
+        "image": "/xvoid.png",
+        "url": "https://marketplace.visualstudio.com/items?itemName=DevHarsha.xvoid"
+      },
+      {
+        "title": "LeGit",
+        "about": "An intelligent VS Code extension that uses Google Gemini AI to generate meaningful Git commit messages. Streamlines development workflow with smart automation.",
+        "image": "/leegit.png",
+        "url": "https://marketplace.visualstudio.com/items?itemName=DevHarsha.leegit"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Sonny is absolutely excellent, his depth of knowledge & his mentorship really meant a lot to us... I would definitely recommend",
+        "user": "Jorge Fouto"
+      },
+      {
+        "text": "Learning with Sonny has been AWESOME, he makes learning React so easy and approachable, you'll finally feel like you know what's going on!",
+        "user": "Adam Curtis"
+      }
+    ]
+  }
+}
