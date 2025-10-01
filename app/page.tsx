@@ -78,11 +78,11 @@ export default function Page() {
 
           {/* Curtain Effect - Split background that reveals on scroll */}
           <ParallaxLayer
-            offset={0.95}
+            offset={0.99}
             speed={0.5}
             factor={2}
             style={{
-              background: "linear-gradient(to bottom, midnightblue 50%, wheat 50%)",
+              background: "linear-gradient(to bottom, #220901ff 50%, #f6aa1cff 50%)",
               zIndex: 4,
             }}
           />
@@ -102,12 +102,13 @@ export default function Page() {
               className={creepster.className}
               style={{
                 fontSize: "60px",
-                WebkitTextStroke: "2px black",
-                color: "transparent",
+                color: "#f6aa1cff",
+                WebkitTextStroke: "5px #f6aa1cff",
+                WebkitTextFillColor: "transparent",
                 mixBlendMode: "difference",
               }}
             >
-              Beware... More Awaits 👀
+              Beware... More Awaits
             </h2>
           </ParallaxLayer>
 
