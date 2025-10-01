@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+:root {
+	--licorice: #220901ff;
+	--blood-red: #621708ff;
+	--penn-red: #941b0cff;
+	--rust: #bc3908ff;
+	--orange-web: #f6aa1cff;
+}
+
