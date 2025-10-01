@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <div className="w-screen min-h-screen bg-[#f6aa1cff]">
-        <Parallax pages={1.3} style={{ top: "0", left: "0" }}>
+        <Parallax pages={10} style={{ top: "0", left: "0" }}>
 
           <ParallaxLayer
             offset={0}
@@ -40,6 +40,18 @@ export default function Page() {
               zIndex: 1,
             }}
           />
+          <ParallaxLayer
+            offset={0}
+            speed={0.7}
+            style={{
+              backgroundImage: "url(/witch.png)",
+              backgroundSize: "18%",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "right bottom",
+              backgroundColor: "transparent",
+              zIndex: 1,
+            }}
+          />
 
           <ParallaxLayer
             offset={0}
@@ -54,7 +66,7 @@ export default function Page() {
             }}
           />
 
-          <ParallaxLayer offset={0} speed={2.5}>
+          <ParallaxLayer offset={0} speed={2.5} style={{ zIndex: 3 }}>
             <div className="flex justify-center items-center h-screen">
               <p
                 className={`text-md text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
@@ -64,16 +76,42 @@ export default function Page() {
             </div>
           </ParallaxLayer>
 
+          {/* Curtain Effect - Split background that reveals on scroll */}
+          <ParallaxLayer
+            offset={0.95}
+            speed={0.5}
+            factor={2}
+            style={{
+              background: "linear-gradient(to bottom, midnightblue 50%, wheat 50%)",
+              zIndex: 4,
+            }}
+          />
+
+          {/* Curtain Effect - Sticky text with blend mode */}
+          <ParallaxLayer
+            offset={1}
+            speed={0.005}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: 5,
+            }}
+          >
+            <h2
+              className={creepster.className}
+              style={{
+                fontSize: "60px",
+                WebkitTextStroke: "2px black",
+                color: "transparent",
+                mixBlendMode: "difference",
+              }}
+            >
+              Beware... More Awaits 👀
+            </h2>
+          </ParallaxLayer>
 
         </Parallax>
-      </div>
-
-      <div className="curtain">
-        <div className="invert">
-          <h2 className={creepster.className}>
-            Beware... More Awaits 👀
-          </h2>
-        </div>
       </div>
     </>
   );
