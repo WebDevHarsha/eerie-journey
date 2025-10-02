@@ -22,11 +22,18 @@ type ResumeData = { main: Main; resume: Resume; portfolio: Portfolio; testimonia
 
 export default function Page() {
   const [resumeData, setResumeData] = useState<ResumeData | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     fetch('/resumeData.json')
       .then(res => res.json())
       .then(data => setResumeData(data));
+  }, []);
+
+  // trigger initial mount animation for first page elements
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 80);
+    return () => clearTimeout(t);
   }, []);
 
   // Small Reveal wrapper: observes when element enters viewport and animates in with staggered delay
@@ -74,59 +81,67 @@ export default function Page() {
       <div className="w-screen min-h-screen bg-[#f6aa1cff]">
         <Parallax pages={20} style={{ top: "0", left: "0" }}>
 
-          <ParallaxLayer
-            offset={0}
-            speed={0.7}
-            style={{
+          <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 2 }}>
+            <div style={{
               backgroundImage: "url(/spider.gif)",
               backgroundSize: "22%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "left top",
               backgroundColor: "transparent",
-              zIndex: 2,
-            }}
-          />
+              width: '100%',
+              height: '100%',
+              transform: mounted ? 'translateY(0)' : 'translateY(-40px)',
+              opacity: mounted ? 1 : 0,
+              transition: 'transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease-out',
+            }} />
+          </ParallaxLayer>
 
-          <ParallaxLayer
-            offset={0}
-            speed={0.7}
-            style={{
+          <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 1 }}>
+            <div style={{
               backgroundImage: "url(/bats.png)",
               backgroundSize: "28%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right top",
               backgroundColor: "transparent",
-              zIndex: 1,
-            }}
-          />
-          <ParallaxLayer
-            offset={0}
-            speed={0.7}
-            style={{
+              width: '100%',
+              height: '100%',
+              transform: mounted ? 'translateY(0)' : 'translateY(-40px)',
+              opacity: mounted ? 1 : 0,
+              transition: 'transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease-out',
+            }} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 1 }}>
+            <div style={{
               backgroundImage: "url(/witch.png)",
               backgroundSize: "18%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right bottom",
               backgroundColor: "transparent",
-              zIndex: 1,
-            }}
-          />
+              width: '100%',
+              height: '100%',
+              transform: mounted ? 'translateY(0)' : 'translateY(-40px)',
+              opacity: mounted ? 1 : 0,
+              transition: 'transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease-out',
+            }} />
+          </ParallaxLayer>
 
-          <ParallaxLayer
-            offset={0}
-            speed={3}
-            style={{
+          <ParallaxLayer offset={0} speed={3} style={{ zIndex: 1 }}>
+            <div style={{
               backgroundImage: "url(/house.png)",
               backgroundSize: "18%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "left bottom",
               backgroundColor: "transparent",
-              zIndex: 1,
-            }}
-          />
+              width: '100%',
+              height: '100%',
+              transform: mounted ? 'translateY(0)' : 'translateY(-40px)',
+              opacity: mounted ? 1 : 0,
+              transition: 'transform 900ms cubic-bezier(.2,.9,.2,1), opacity 900ms ease-out',
+            }} />
+          </ParallaxLayer>
 
           <ParallaxLayer offset={0} speed={2.5} style={{ zIndex: 3 }}>
-            <div className="flex justify-center items-center h-screen">
+            <div className="flex justify-center items-center h-screen" style={{ transform: mounted ? 'translateY(0)' : 'translateY(-40px)', opacity: mounted ? 1 : 0, transition: 'transform 800ms cubic-bezier(.2,.9,.2,1), opacity 800ms ease-out' }}>
               <p
                 className={`text-6xl text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
               >
