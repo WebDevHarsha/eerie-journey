@@ -199,12 +199,12 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 3, end: 3.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
           >
             <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Skills</h2>
           </ParallaxLayer>
           
-          <ParallaxLayer offset={3.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
+          <ParallaxLayer offset={3.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl w-full">
               {resumeData.resume.skills.map((skill: Skill, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
@@ -224,12 +224,12 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 4, end: 4.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
           >
             <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Education</h2>
           </ParallaxLayer>
           
-          <ParallaxLayer offset={4.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
+          <ParallaxLayer offset={4.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="flex flex-col gap-4 w-full max-w-2xl">
               {resumeData.resume.education.map((edu: Education, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
@@ -248,12 +248,12 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 5, end: 5.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
           >
             <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Work</h2>
           </ParallaxLayer>
           
-          <ParallaxLayer offset={5.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
+          <ParallaxLayer offset={5.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="space-y-4 max-w-3xl w-full">
               {resumeData.resume.work.map((job: Work, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
@@ -272,12 +272,12 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 6, end: 6.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
           >
             <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
           </ParallaxLayer>
           
-          <ParallaxLayer offset={6.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
+          <ParallaxLayer offset={6.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full md:w-[60vw]">
               {resumeData.portfolio.projects.slice(0, 4).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
@@ -296,12 +296,13 @@ export default function Page() {
           <ParallaxLayer 
             sticky={{ start: 7, end: 7.7 }} 
             className="flex flex-col gap-0"
+            style={{ justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', alignItems: window.innerWidth < 768 ? 'center' : 'flex-start', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', paddingTop: '4rem' }}
           >
             <h2 className={`text-4xl md:text-6xl text-[#220901ff] leading-tight ${creepster.className}`}>Extensions and</h2>
             <h2 className={`text-4xl md:text-6xl text-[#220901ff] leading-tight -mt-2 ${creepster.className}`}>Packages</h2>
           </ParallaxLayer>
           
-          <ParallaxLayer offset={7.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
+          <ParallaxLayer offset={7.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full md:w-[60vw]">
               {resumeData.portfolio.projects.slice(4).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
@@ -318,11 +319,11 @@ export default function Page() {
           <ParallaxLayer offset={8} speed={0.5} style={{ backgroundColor: "#220901ff" }} />
           <ParallaxLayer 
             sticky={{ start: 8, end: 8.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
           >
-            <h2 className={`text-6xl text-[#f6aa1cff] ${creepster.className}`}>Contact</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Contact</h2>
           </ParallaxLayer>
-          <ParallaxLayer offset={8.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
+          <ParallaxLayer offset={8.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="bg-[#f6aa1cff] p-8 rounded max-w-2xl hover:shadow-lg hover:scale-105 transition-all duration-500">
               <p className="text-[#220901ff] text-xl mb-4 font-semibold">
                 <span className="text-[#941b0cff]">Email:</span> {resumeData.main.email}
