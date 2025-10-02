@@ -9,9 +9,19 @@ const creepster = Creepster({
   weight: "400",
 });
 
+type Skill = { name: string; level: string };
+type Education = { school: string; degree: string; graduated: string };
+type Work = { company: string; title: string; years: string };
+type Project = { title: string; about: string; url?: string };
+type Social = { url: string; className: string };
+type Main = { bio: string; email: string; phone: string; address: { city: string; state: string }; social: Social[] };
+type Resume = { skills: Skill[]; education: Education[]; work: Work[] };
+type Portfolio = { projects: Project[] };
+type ResumeData = { main: Main; resume: Resume; portfolio: Portfolio; testimonials?: Array<Record<string, unknown>> };
+
 
 export default function Page() {
-  const [resumeData, setResumeData] = useState<any>(null);
+  const [resumeData, setResumeData] = useState<ResumeData | null>(null);
 
   useEffect(() => {
     fetch('/resumeData.json')
@@ -181,7 +191,7 @@ export default function Page() {
           
           <ParallaxLayer offset={3.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
             <div className="grid grid-cols-2 gap-6 max-w-3xl w-full">
-              {resumeData.resume.skills.map((skill: any, i: number) => (
+              {resumeData.resume.skills.map((skill: Skill, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                   <div className="bg-[#220901ff] p-4 rounded hover:shadow-lg transition-all hover:scale-105">
                     <p className="text-[#f6aa1cff] text-lg mb-2 font-bold">{skill.name}</p>
@@ -206,7 +216,7 @@ export default function Page() {
           
           <ParallaxLayer offset={4.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
             <div className="flex flex-col gap-4 w-full max-w-2xl">
-              {resumeData.resume.education.map((edu: any, i: number) => (
+              {resumeData.resume.education.map((edu: Education, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                   <div className="bg-[#f6aa1cff] p-6 rounded max-w-3xl hover:bg-[#bc3908ff] transition-all duration-300 hover:scale-105">
                     <h3 className={`text-3xl text-[#220901ff] ${creepster.className}`}>{edu.school}</h3>
@@ -230,7 +240,7 @@ export default function Page() {
           
           <ParallaxLayer offset={5.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
             <div className="space-y-4 max-w-3xl w-full">
-              {resumeData.resume.work.map((job: any, i: number) => (
+              {resumeData.resume.work.map((job: Work, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                   <div className="bg-[#220901ff] p-6 rounded hover:bg-[#941b0cff] transition-all duration-300 hover:scale-105">
                     <h3 className={`text-3xl text-[#f6aa1cff] ${creepster.className}`}>{job.company}</h3>
@@ -254,7 +264,7 @@ export default function Page() {
           
           <ParallaxLayer offset={6.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
             <div className="grid grid-cols-2 gap-6 max-w-4xl w-[60vw]">
-              {resumeData.portfolio.projects.slice(0, 4).map((project: any, i: number) => (
+              {resumeData.portfolio.projects.slice(0, 4).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                   <a href={project.url} target="_blank" className="bg-[#f6aa1cff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#bc3908ff] hover:shadow-[0_0_30px_#941b0cff] min-h-[160px] flex flex-col justify-between">
                     <h3 className={`text-2xl text-[#220901ff] mb-2 ${creepster.className}`}>{project.title}</h3>
@@ -278,7 +288,7 @@ export default function Page() {
           
           <ParallaxLayer offset={7.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
             <div className="grid grid-cols-2 gap-6 max-w-4xl w-[60vw]">
-              {resumeData.portfolio.projects.slice(4).map((project: any, i: number) => (
+              {resumeData.portfolio.projects.slice(4).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                   <a href={project.url} target="_blank" className="bg-[#220901ff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#621708ff] hover:shadow-[0_0_30px_#f6aa1cff] min-h-[160px] flex flex-col justify-between">
                     <h3 className={`text-2xl text-[#f6aa1cff] mb-2 ${creepster.className}`}>{project.title}</h3>
@@ -309,7 +319,7 @@ export default function Page() {
                 <span className="text-[#941b0cff]">Location:</span> {resumeData.main.address.city}, {resumeData.main.address.state}
               </p>
                 <div className="flex gap-4 justify-center">
-                  {resumeData.main.social.map((social: any, i: number) => (
+                  {resumeData.main.social.map((social: Social, i: number) => (
                     <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                       <a href={social.url} target="_blank" className="text-[#220901ff] hover:text-[#621708ff] text-3xl hover:scale-125 transition-all duration-300">
                         <i className={social.className}></i>
