@@ -9,7 +9,6 @@ const creepster = Creepster({
   weight: "400",
 });
 
-// Note: keyframe animations removed per user request
 
 export default function Page() {
   const [resumeData, setResumeData] = useState<any>(null);
@@ -174,8 +173,8 @@ export default function Page() {
           <ParallaxLayer offset={3} speed={0.5} style={{ backgroundColor: "#f6aa1cff" }} />
           
           <ParallaxLayer 
-            sticky={{ start: 3, end: 3.8 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '5rem', paddingLeft: '3rem' }}
+            sticky={{ start: 3, end: 3.7 }} 
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
             <h2 className={`text-6xl text-[#220901ff] ${creepster.className}`}>Skills</h2>
           </ParallaxLayer>
@@ -199,8 +198,8 @@ export default function Page() {
           <ParallaxLayer offset={4} speed={0.5} style={{ backgroundColor: "#220901ff" }} />
           
           <ParallaxLayer 
-            sticky={{ start: 4, end: 4.8 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '5rem', paddingLeft: '3rem' }}
+            sticky={{ start: 4, end: 4.7 }} 
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
             <h2 className={`text-6xl text-[#f6aa1cff] ${creepster.className}`}>Education</h2>
           </ParallaxLayer>
@@ -223,8 +222,8 @@ export default function Page() {
           <ParallaxLayer offset={5} speed={0.5} style={{ backgroundColor: "#f6aa1cff" }} />
           
           <ParallaxLayer 
-            sticky={{ start: 5, end: 5.8 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '5rem', paddingLeft: '3rem' }}
+            sticky={{ start: 5, end: 5.7 }} 
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
             <h2 className={`text-6xl text-[#220901ff] ${creepster.className}`}>Work</h2>
           </ParallaxLayer>
@@ -247,8 +246,8 @@ export default function Page() {
           <ParallaxLayer offset={6} speed={0.5} style={{ backgroundColor: "#220901ff" }} />
           
           <ParallaxLayer 
-            sticky={{ start: 6, end: 6.8 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '5rem', paddingLeft: '3rem' }}
+            sticky={{ start: 6, end: 6.7 }} 
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
             <h2 className={`text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
           </ParallaxLayer>
@@ -270,10 +269,11 @@ export default function Page() {
           <ParallaxLayer offset={7} speed={0.5} style={{ backgroundColor: "#f6aa1cff" }} />
           
           <ParallaxLayer 
-            sticky={{ start: 7, end: 7.8 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '5rem', paddingLeft: '3rem' }}
+            sticky={{ start: 7, end: 7.7 }} 
+            className="flex flex-col gap-0"
           >
-            <h2 className={`text-6xl text-[#220901ff] ${creepster.className}`}>More Projects</h2>
+            <h2 className={`text-6xl text-[#220901ff] leading-tight ${creepster.className}`}>Extensions and</h2>
+            <h2 className={`text-6xl text-[#220901ff] leading-tight -mt-2 ${creepster.className}`}>Packages</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={7.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
@@ -292,8 +292,8 @@ export default function Page() {
           {/* PAGE 8: Contact */}
           <ParallaxLayer offset={8} speed={0.5} style={{ backgroundColor: "#220901ff" }} />
           <ParallaxLayer 
-            sticky={{ start: 8, end: 8.8 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '5rem', paddingLeft: '3rem' }}
+            sticky={{ start: 8, end: 8.7 }} 
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
             <h2 className={`text-6xl text-[#f6aa1cff] ${creepster.className}`}>Contact</h2>
           </ParallaxLayer>
