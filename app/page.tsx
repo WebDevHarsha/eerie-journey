@@ -84,7 +84,7 @@ export default function Page() {
           <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 2 }}>
             <div style={{
               backgroundImage: "url(/spider.gif)",
-              backgroundSize: "22%",
+              backgroundSize: window.innerWidth < 768 ? "66%" : "22%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "left top",
               backgroundColor: "transparent",
@@ -99,7 +99,7 @@ export default function Page() {
           <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 1 }}>
             <div style={{
               backgroundImage: "url(/bats.png)",
-              backgroundSize: "28%",
+              backgroundSize: window.innerWidth < 768 ? "70%" : "28%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right top",
               backgroundColor: "transparent",
@@ -110,10 +110,10 @@ export default function Page() {
               transition: 'transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease-out',
             }} />
           </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={1.5} style={{ zIndex: 1 }}>
+          <ParallaxLayer offset={0} speed={3} style={{ zIndex: 1 }}>
             <div style={{
               backgroundImage: "url(/witch.png)",
-              backgroundSize: "18%",
+              backgroundSize: window.innerWidth < 768 ? "54%" : "18%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right bottom",
               backgroundColor: "transparent",
@@ -125,10 +125,10 @@ export default function Page() {
             }} />
           </ParallaxLayer>
 
-          <ParallaxLayer offset={0} speed={3} style={{ zIndex: 1 }}>
+          <ParallaxLayer offset={0} speed={1.5} style={{ zIndex: 1 }}>
             <div style={{
               backgroundImage: "url(/house.png)",
-              backgroundSize: "18%",
+              backgroundSize: window.innerWidth < 768 ? "54%" : "18%",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "left bottom",
               backgroundColor: "transparent",
@@ -141,9 +141,9 @@ export default function Page() {
           </ParallaxLayer>
 
           <ParallaxLayer offset={0} speed={2.5} style={{ zIndex: 3 }}>
-            <div className="flex justify-center items-center h-screen" style={{ transform: mounted ? 'translateY(0)' : 'translateY(-40px)', opacity: mounted ? 1 : 0, transition: 'transform 800ms cubic-bezier(.2,.9,.2,1), opacity 800ms ease-out' }}>
+            <div className="flex justify-center items-center h-screen px-4" style={{ transform: mounted ? 'translateY(0)' : 'translateY(-40px)', opacity: mounted ? 1 : 0, transition: 'transform 800ms cubic-bezier(.2,.9,.2,1), opacity 800ms ease-out' }}>
               <p
-                className={`text-4xl md:text-6xl text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
+                className={`text-4xl md:text-6xl text-blood_red-500 drop-shadow-[0_0_15px_#f97447] text-center ${creepster.className}`}
               >
                 Welcome to my Spooky Portfolio
               </p>
