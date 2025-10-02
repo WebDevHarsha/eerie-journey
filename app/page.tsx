@@ -79,7 +79,7 @@ export default function Page() {
   return (
     <>
       <div className="w-screen min-h-screen bg-[#f6aa1cff]">
-        <Parallax pages={20} style={{ top: "0", left: "0" }}>
+        <Parallax pages={9} style={{ top: "0", left: "0" }}>
 
           <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 2 }}>
             <div style={{
@@ -110,7 +110,7 @@ export default function Page() {
               transition: 'transform 700ms cubic-bezier(.2,.9,.2,1), opacity 700ms ease-out',
             }} />
           </ParallaxLayer>
-          <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 1 }}>
+          <ParallaxLayer offset={0} speed={1.5} style={{ zIndex: 1 }}>
             <div style={{
               backgroundImage: "url(/witch.png)",
               backgroundSize: "18%",
@@ -143,7 +143,7 @@ export default function Page() {
           <ParallaxLayer offset={0} speed={2.5} style={{ zIndex: 3 }}>
             <div className="flex justify-center items-center h-screen" style={{ transform: mounted ? 'translateY(0)' : 'translateY(-40px)', opacity: mounted ? 1 : 0, transition: 'transform 800ms cubic-bezier(.2,.9,.2,1), opacity 800ms ease-out' }}>
               <p
-                className={`text-6xl text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
+                className={`text-4xl md:text-6xl text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
               >
                 Welcome to my Spooky Portfolio
               </p>
@@ -189,7 +189,7 @@ export default function Page() {
           {/* PAGE 2: About */}
           <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: "#220901ff" }}>
             <div className="flex flex-col justify-center items-center h-screen px-8">
-              <h2 className={`text-6xl text-[#f6aa1cff] mb-8 ${creepster.className}`}>About Me</h2>
+              <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] mb-8 ${creepster.className}`}>About Me</h2>
               <p className="text-white text-xl max-w-3xl text-center">{resumeData.main.bio}</p>
             </div>
           </ParallaxLayer>
@@ -201,11 +201,11 @@ export default function Page() {
             sticky={{ start: 3, end: 3.7 }} 
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
-            <h2 className={`text-6xl text-[#220901ff] ${creepster.className}`}>Skills</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Skills</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={3.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
-            <div className="grid grid-cols-2 gap-6 max-w-3xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl w-full">
               {resumeData.resume.skills.map((skill: Skill, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
                   <div className="bg-[#220901ff] p-4 rounded hover:shadow-lg transition-all hover:scale-105">
@@ -226,7 +226,7 @@ export default function Page() {
             sticky={{ start: 4, end: 4.7 }} 
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
-            <h2 className={`text-6xl text-[#f6aa1cff] ${creepster.className}`}>Education</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Education</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={4.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
@@ -250,7 +250,7 @@ export default function Page() {
             sticky={{ start: 5, end: 5.7 }} 
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
-            <h2 className={`text-6xl text-[#220901ff] ${creepster.className}`}>Work</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Work</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={5.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
@@ -274,14 +274,14 @@ export default function Page() {
             sticky={{ start: 6, end: 6.7 }} 
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', paddingTop: '4rem', paddingLeft: '3rem', zIndex: 20 }}
           >
-            <h2 className={`text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={6.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
-            <div className="grid grid-cols-2 gap-6 max-w-4xl w-[60vw]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full md:w-[60vw]">
               {resumeData.portfolio.projects.slice(0, 4).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
-                  <a href={project.url} target="_blank" className="bg-[#f6aa1cff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#bc3908ff] hover:shadow-[0_0_30px_#941b0cff] min-h-[160px] flex flex-col justify-between">
+                  <a href={project.url} target="_blank" className="bg-[#f6aa1cff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#bc3908ff] hover:shadow-[0_0_30px_#941b0cff] min-h-[120px] md:min-h-[160px] flex flex-col justify-between">
                     <h3 className={`text-2xl text-[#220901ff] mb-2 ${creepster.className}`}>{project.title}</h3>
                     <p className="text-[#621708ff] leading-relaxed">{project.about}</p>
                   </a>
@@ -297,15 +297,15 @@ export default function Page() {
             sticky={{ start: 7, end: 7.7 }} 
             className="flex flex-col gap-0"
           >
-            <h2 className={`text-6xl text-[#220901ff] leading-tight ${creepster.className}`}>Extensions and</h2>
-            <h2 className={`text-6xl text-[#220901ff] leading-tight -mt-2 ${creepster.className}`}>Packages</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#220901ff] leading-tight ${creepster.className}`}>Extensions and</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#220901ff] leading-tight -mt-2 ${creepster.className}`}>Packages</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={7.3} speed={1.2} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '3rem' }}>
-            <div className="grid grid-cols-2 gap-6 max-w-4xl w-[60vw]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full md:w-[60vw]">
               {resumeData.portfolio.projects.slice(4).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
-                  <a href={project.url} target="_blank" className="bg-[#220901ff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#621708ff] hover:shadow-[0_0_30px_#f6aa1cff] min-h-[160px] flex flex-col justify-between">
+                  <a href={project.url} target="_blank" className="bg-[#220901ff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#621708ff] hover:shadow-[0_0_30px_#f6aa1cff] min-h-[120px] md:min-h-[160px] flex flex-col justify-between">
                     <h3 className={`text-2xl text-[#f6aa1cff] mb-2 ${creepster.className}`}>{project.title}</h3>
                     <p className="text-[#bc3908ff] leading-relaxed">{project.about}</p>
                   </a>
