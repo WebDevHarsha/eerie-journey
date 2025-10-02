@@ -119,7 +119,7 @@ export default function Page() {
           <ParallaxLayer offset={0} speed={2.5} style={{ zIndex: 3 }}>
             <div className="flex justify-center items-center h-screen">
               <p
-                className={`text-md text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
+                className={`text-6xl text-blood_red-500 drop-shadow-[0_0_15px_#f97447] ${creepster.className}`}
               >
                 Welcome to my Spooky Portfolio
               </p>
