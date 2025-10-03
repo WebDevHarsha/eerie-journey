@@ -36,7 +36,7 @@ export default function Page() {
     return () => clearTimeout(t);
   }, []);
 
-  // Small Reveal wrapper: observes when element enters viewport and animates in with staggered delay
+  // Small Reveal wrapper taht observes when element enters viewport and animates in with staggered delay
   function Reveal({ children, index = 0, dir = 'right' }: { children: React.ReactNode; index?: number; dir?: 'right' | 'left' }) {
     const ref = React.useRef<HTMLDivElement | null>(null);
     const [visible, setVisible] = React.useState(false);
@@ -79,7 +79,7 @@ export default function Page() {
   return (
     <>
       <div className="w-screen min-h-screen bg-[#f6aa1cff]">
-        <Parallax pages={9} style={{ top: "0", left: "0" }}>
+        <Parallax pages={8} style={{ top: "0", left: "0" }}>
 
           <ParallaxLayer offset={0} speed={0.7} style={{ zIndex: 2 }}>
             <div style={{
@@ -268,7 +268,7 @@ export default function Page() {
           </ParallaxLayer>
 
           {/* PAGE 6: Projects - Sticky Title */}
-          <ParallaxLayer offset={6} factor={1.5} speed={0.3} style={{ backgroundColor: "#220901ff" }} />
+          <ParallaxLayer offset={6} factor={2} speed={0.3} style={{ backgroundColor: "#220901ff" }} />
           
           <ParallaxLayer 
             sticky={{ start: 6, end: 6.7 }} 
@@ -277,7 +277,7 @@ export default function Page() {
             <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
           </ParallaxLayer>
           
-          <ParallaxLayer offset={6.3} factor={2} speed={1.2} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingTop: '3.5rem', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
+          <ParallaxLayer offset={6.3} factor={1} speed={1.2} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingTop: '3.5rem', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full md:w-[60vw]">
               {resumeData.portfolio.projects.slice(0, ).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
@@ -303,29 +303,29 @@ export default function Page() {
           </ParallaxLayer>
 
               
-          {/* PAGE 8: Contact */}
-          <ParallaxLayer offset={8} speed={0.5} style={{ backgroundColor: "#220901ff" }} />
+          {/* PAGE 7: Contact  */}
+          <ParallaxLayer offset={7} speed={0.5} style={{ backgroundColor: "#f6aa1cff" }} />
           <ParallaxLayer 
-            sticky={{ start: 8, end: 8.7 }} 
+            sticky={{ start: 7, end: 7.7 }} 
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
           >
-            <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Contact</h2>
+            <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Contact</h2>
           </ParallaxLayer>
-          <ParallaxLayer offset={8.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
-            <div className="bg-[#f6aa1cff] p-8 rounded max-w-2xl hover:shadow-lg hover:scale-105 transition-all duration-500">
-              <p className="text-[#220901ff] text-xl mb-4 font-semibold">
-                <span className="text-[#941b0cff]">Email:</span> {resumeData.main.email}
+          <ParallaxLayer offset={7.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
+            <div className="bg-[#220901ff] p-8 rounded max-w-2xl hover:shadow-lg hover:scale-105 transition-all duration-500">
+              <p className="text-[#f6aa1cff] text-xl mb-4 font-semibold">
+                <span className="text-[#f6aa1cff]">Email:</span> {resumeData.main.email}
               </p>
-              <p className="text-[#220901ff] text-xl mb-4 font-semibold">
-                <span className="text-[#941b0cff]">Phone:</span> {resumeData.main.phone}
+              <p className="text-[#f6aa1cff] text-xl mb-4 font-semibold">
+                <span className="text-[#f6aa1cff]">Phone:</span> {resumeData.main.phone}
               </p>
-              <p className="text-[#220901ff] text-xl mb-6 font-semibold">
-                <span className="text-[#941b0cff]">Location:</span> {resumeData.main.address.city}, {resumeData.main.address.state}
+              <p className="text-[#f6aa1cff] text-xl mb-6 font-semibold">
+                <span className="text-[#f6aa1cff]">Location:</span> {resumeData.main.address.city}, {resumeData.main.address.state}
               </p>
                 <div className="flex gap-4 justify-center">
                   {resumeData.main.social.map((social: Social, i: number) => (
                     <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
-                      <a href={social.url} target="_blank" className="text-[#220901ff] hover:text-[#621708ff] text-3xl hover:scale-125 transition-all duration-300">
+                      <a href={social.url} target="_blank" className="text-[#f6aa1cff] hover:text-[#621708ff] text-3xl hover:scale-125 transition-all duration-300">
                         <i className={social.className}></i>
                       </a>
                     </Reveal>
