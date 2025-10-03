@@ -199,9 +199,9 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 3, end: 3.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20, pointerEvents: 'none' }}
           >
-            <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Skills</h2>
+            <h2 style={{ pointerEvents: 'auto' }} className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Skills</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={3.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
@@ -224,16 +224,16 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 4, end: 4.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20, pointerEvents: 'none' }}
           >
-            <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Education</h2>
+            <h2 style={{ pointerEvents: 'auto' }} className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Education</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={4.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="flex flex-col gap-4 w-full max-w-2xl">
               {resumeData.resume.education.map((edu: Education, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
-                  <div className="bg-[#f6aa1cff] p-6 rounded max-w-3xl hover:bg-[#bc3908ff] transition-all duration-300 hover:scale-105">
+                  <div className="bg-[#f6aa1cff] p-6 rounded transition-all duration-300 hover:scale-105">
                     <h3 className={`text-3xl text-[#220901ff] ${creepster.className}`}>{edu.school}</h3>
                     <p className="text-[#220901ff] text-lg font-semibold">{edu.degree}</p>
                     <p className="text-[#621708ff]">{edu.graduated}</p>
@@ -248,16 +248,16 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 5, end: 5.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20, pointerEvents: 'none' }}
           >
-            <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Work</h2>
+            <h2 style={{ pointerEvents: 'auto' }} className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Work</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={5.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="space-y-4 max-w-3xl w-full">
               {resumeData.resume.work.map((job: Work, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
-                  <div className="bg-[#220901ff] p-6 rounded hover:bg-[#941b0cff] transition-all duration-300 hover:scale-105">
+                  <div className="bg-[#220901ff] p-6 rounded transition-all duration-300 hover:scale-105">
                     <h3 className={`text-3xl text-[#f6aa1cff] ${creepster.className}`}>{job.company}</h3>
                     <p className="text-white text-lg font-semibold">{job.title}</p>
                     <p className="text-[#bc3908ff]">{job.years}</p>
@@ -272,16 +272,16 @@ export default function Page() {
           
           <ParallaxLayer 
             sticky={{ start: 6, end: 6.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20, pointerEvents: 'none' }}
           >
-            <h2 className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
+            <h2 style={{ pointerEvents: 'auto' }} className={`text-4xl md:text-6xl text-[#f6aa1cff] ${creepster.className}`}>Projects</h2>
           </ParallaxLayer>
           
           <ParallaxLayer offset={6.3} factor={1} speed={1.2} style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingTop: '3.5rem', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl w-full md:w-[60vw]">
               {resumeData.portfolio.projects.slice(0, ).map((project: Project, i: number) => (
                 <Reveal key={i} index={i} dir={i % 2 === 0 ? 'right' : 'left'}>
-                  <div className="bg-[#f6aa1cff] p-6 rounded hover:scale-105 transition-all duration-300 hover:bg-[#bc3908ff] hover:shadow-[0_0_30px_#941b0cff] min-h-[120px] md:min-h-[160px] flex flex-col justify-between">
+                  <div className="bg-[#f6aa1cff] p-6 rounded transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_#941b0cff] min-h-[120px] md:min-h-[160px] flex flex-col justify-between">
                     <div>
                       <h3 className={`text-2xl text-[#220901ff] mb-2 ${creepster.className}`}>{project.title}</h3>
                       <p className="text-[#621708ff] leading-relaxed mb-3">{project.about}</p>
@@ -291,7 +291,7 @@ export default function Page() {
                         href={project.url} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-block bg-[#220901ff] text-[#f6aa1cff] px-4 py-2 rounded text-sm font-semibold hover:bg-[#941b0cff] transition-colors duration-200"
+                        className="inline-block bg-[#220901ff] text-[#f6aa1cff] px-4 py-2 rounded text-sm font-semibold transition-colors duration-200"
                       >
                         View Project →
                       </a>
@@ -307,9 +307,9 @@ export default function Page() {
           <ParallaxLayer offset={7} speed={0.5} style={{ backgroundColor: "#f6aa1cff" }} />
           <ParallaxLayer 
             sticky={{ start: 7, end: 7.7 }} 
-            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20 }}
+            style={{ display: 'flex', alignItems: 'flex-start', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-start', paddingTop: '4rem', paddingLeft: window.innerWidth < 768 ? '0' : '3rem', zIndex: 20, pointerEvents: 'none' }}
           >
-            <h2 className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Contact</h2>
+            <h2 style={{ pointerEvents: 'auto' }} className={`text-4xl md:text-6xl text-[#220901ff] ${creepster.className}`}>Contact</h2>
           </ParallaxLayer>
           <ParallaxLayer offset={7.3} speed={1.5} style={{ display: 'flex', alignItems: 'center', justifyContent: window.innerWidth < 768 ? 'center' : 'flex-end', paddingLeft: window.innerWidth < 768 ? '1rem' : '0', paddingRight: window.innerWidth < 768 ? '1rem' : '3rem' }}>
             <div className="bg-[#220901ff] p-8 rounded max-w-2xl hover:shadow-lg hover:scale-105 transition-all duration-500">
